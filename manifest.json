@@ -1,0 +1,13 @@
+{
+  "name": "A jQuery Chrome extension",
+  "version": "0.1",
+  "description": "Use jQuery to build Chrome extensions",
+  "content_scripts": [
+    {
+      "matches": ["http://jquery.com/*"],
+      "js": ["jquery.js", "content.js"]
+    }
+  ],
+  "manifest_version": 2
+
+}
