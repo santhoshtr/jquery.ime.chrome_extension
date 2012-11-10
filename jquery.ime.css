@@ -1,6 +1,6 @@
 div.imeselector {
 	position: absolute;
-	background: url('../images/ime-active.svg') no-repeat scroll left center
+	background: url('chrome-extension://__MSG_@@extension_id__/images/ime-active.svg') no-repeat scroll left center
 		transparent;
 	background-size: 15px;
 	cursor: pointer;
@@ -77,7 +77,7 @@ div.imeselector a {
 }
 
 .imeselector-menu .checked a {
-	background: url(../images/tick.svg) 4px no-repeat;
+	background: url('chrome-extension://__MSG_@@extension_id__/images/tick.svg') 4px no-repeat;
 	background-size: 12px 12px;
 }
 
