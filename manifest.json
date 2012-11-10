@@ -3,9 +3,9 @@
       "email": "ershad92@gmail.com",
       "name": "Ershad Kunnakkadan"
   }],
-  "name": "A jQuery Chrome extension",
+  "name": "Wikimedia input method extension",
   "version": "0.1",
-  "description": "Use jQuery to build Chrome extensions",
+  "description": "A chrome extension to automatically include jquery.ime library by Wikimedia Foundation for multilingual input",
   "content_scripts": [
     {
       "matches": ["http://*/*"],
