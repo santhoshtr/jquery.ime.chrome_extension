@@ -1,1 +1,2 @@
-$('a').css({'background-color': 'yellow'});
+// $('a').css({'background-color': 'blue'});
+$( 'input,textarea' ).ime();

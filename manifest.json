@@ -4,10 +4,13 @@
   "description": "Use jQuery to build Chrome extensions",
   "content_scripts": [
     {
-      "matches": ["http://jquery.com/*"],
-      "js": ["jquery.js", "content.js"]
+      "matches": ["http://ershadk.com/*"],
+      "js": ["jquery.js", "jquery.ime.js",
+        "jquery.ime.selector.js",
+        "jquery.ime.preferences.js", 
+        "jquery.ime.inputmethods.js", "content.js"],
+      "css":["jquery.ime.css"]
     }
   ],
   "manifest_version": 2
-
 }
