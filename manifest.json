@@ -1,4 +1,8 @@
 {
+  "author": [{
+      "email": "ershad92@gmail.com",
+      "name": "Ershad Kunnakkadan"
+  }],
   "name": "A jQuery Chrome extension",
   "version": "0.1",
   "description": "Use jQuery to build Chrome extensions",
