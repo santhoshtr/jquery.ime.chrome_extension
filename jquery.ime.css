@@ -1,6 +1,6 @@
 div.imeselector {
 	position: absolute;
-	background: url('chrome-extension://__MSG_@@extension_id__/images/ime-active.svg') no-repeat scroll left center
+	background: url('../images/ime-active.svg') no-repeat scroll left center
 		transparent;
 	background-size: 15px;
 	cursor: pointer;
@@ -12,6 +12,7 @@ div.imeselector {
 	text-align: left;
 	font-family: 'sans';
 	white-space: nowrap;
+	z-index: 9999;
 }
 
 div.imeselector a {
@@ -77,7 +78,7 @@ div.imeselector a {
 }
 
 .imeselector-menu .checked a {
-	background: url('chrome-extension://__MSG_@@extension_id__/images/tick.svg') 4px no-repeat;
+	background: url(../images/tick.svg) 4px no-repeat;
 	background-size: 12px 12px;
 }
 
@@ -90,9 +91,12 @@ ul.ime-language-list {
 }
 
 div.ime-language-list {
-	overflow: hidden;
-	width: 250px;
+	overflow: auto;
 	padding: 0 0;
+}
+
+.ime-language-list {
+	margin: 0;
 }
 
 .imeselector-menu {
