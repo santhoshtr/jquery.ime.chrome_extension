@@ -58,9 +58,17 @@
 			name: 'Palochka',
 			source: 'rules/cyrl/cyrl-palochka.js'
 		},
+		'da-normforms': {
+			name: 'Normal forms',
+			source: 'rules/da/da-normforms.js'
+		},
 		'eo-transliteration': {
 			name: 'Transliteration',
 			source: 'rules/eo/eo-transliteration.js'
+		},
+		'fo-normforms': {
+			name: 'Føroyskt',
+			source: 'rules/fo/fo-normforms.js'
 		},
 		'fi-transliteration': {
 			name: 'translitterointi',
@@ -73,6 +81,10 @@
 		'hi-inscript': {
 			name: 'इनस्क्रिप्ट',
 			source: 'rules/hi/hi-inscript.js'
+		},
+		'is-normforms': {
+			name: 'Normal forms',
+			source: 'rules/is/is-normforms.js'
 		},
 		'mai-inscript': {
 			name: 'इनस्क्रिप्ट',
@@ -90,6 +102,10 @@
 		'ml-inscript': {
 			name: 'ഇൻസ്ക്രിപ്റ്റ്',
 			source: 'rules/ml/ml-inscript.js'
+		},
+		'sv-normforms': {
+			name: 'Normal forms',
+			source: 'rules/sv/sv-normforms.js'
 		},
 		'ta-inscript': {
 			name: 'இன்ஸ்கிரிப்ட்',
@@ -171,6 +187,14 @@
 			name: 'Transliteration',
 			source: 'rules/ne/ne-transliteration.js'
 		},
+		'no-normforms': {
+			name: 'Normal transliterasjon',
+			source: 'rules/no/no-normforms.js'
+		},
+		'no-tildeforms': {
+			name: 'Tildemerket transliterasjon',
+			source: 'rules/no/no-tildeforms.js'
+		},
 		'or-transliteration': {
 			name: 'Transliteration',
 			source: 'rules/or/or-transliteration.js'
@@ -182,6 +206,10 @@
 		'or-lekhani': {
 			name: 'ଲେଖନୀ',
 			source: 'rules/or/or-lekhani.js'
+		},
+		'se-normforms': {
+			name: 'Normal forms',
+			source: 'rules/se/se-normforms.js'
 		},
 		'te-inscript': {
 			name: 'ఇన్‍స్క్రిప్ట్',
@@ -234,6 +262,10 @@
 		'ur-transliteration': {
 			name: 'Transliteration',
 			source: 'rules/ur/ur-transliteration.js'
+		},
+		'mn-cyrl': {
+			name: 'Cyrillc',
+			source: 'rules/mn/mn-cyrl.js'
 		}
 	} );
 
@@ -278,6 +310,10 @@
 			autonym: 'нохчийн',
 			inputmethods: [ 'cyrl-palochka' ]
 		},
+		'da': {
+			autonym: 'Dansk',
+			inputmethods: [ 'da-normforms' ]
+		},
 		'de': {
 			autonym: 'Deutsch',
 			inputmethods: [ 'de' ]
@@ -285,6 +321,10 @@
 		'eo': {
 			autonym: 'Esperanto',
 			inputmethods: [ 'eo-transliteration' ]
+		},
+		'fo': {
+			autonym: 'Føroyskt',
+			inputmethods: [ 'fo-normforms' ]
 		},
 		'fi': {
 			autonym: 'Suomi',
@@ -309,6 +349,10 @@
 		'hne': {
 			autonym: 'छत्तीसगढ़ी',
 			inputmethods: [ 'hi-transliteration' ]
+		},
+		'is': {
+			autonym: 'Íslenska',
+			inputmethods: [ 'is-normforms' ]
 		},
 		'ka': {
 			autonym: 'ქართული ენა',
@@ -342,6 +386,10 @@
 			autonym: 'മലയാളം',
 			inputmethods: [ 'ml-transliteration', 'ml-inscript' ]
 		},
+		'mn': {
+			autonym: 'Монгол',
+			inputmethods: [ 'mn-cyrl' ]
+		},
 		'mr': {
 			autonym: 'मराठी',
 			inputmethods: [ 'mr-transliteration', 'mr-inscript2', 'mr-inscript' ]
@@ -353,6 +401,18 @@
 		'new': {
 			autonym: 'नेपाल भाषा',
 			inputmethods: [ 'hi-transliteration', 'hi-inscript' ]
+		},
+		'no': {
+			autonym: 'Norsk',
+			inputmethods: [ 'no-normforms', 'no-tildeforms' ]
+		},
+		'nb': {
+			autonym: 'Norsk (bokmål)',
+			inputmethods: [ 'no-normforms', 'no-tildeforms' ]
+		},
+		'nn': {
+			autonym: 'Norsk (nynorsk)',
+			inputmethods: [ 'no-normforms', 'no-tildeforms' ]
 		},
 		'or': {
 			autonym: 'ଓଡ଼ିଆ',
@@ -378,6 +438,10 @@
 			autonym: 'संस्कृत',
 			inputmethods: [ 'sa-transliteration', 'sa-inscript2', 'sa-inscript' ]
 		},
+		'se': {
+			autonym: 'Davvisámegiella',
+			inputmethods: [ 'se-normforms' ]
+		},
 		'shi': {
 			autonym: 'ⵜⵉⴼⵉⵏⴰⵖ',
 			inputmethods: [ 'ber-tfng' ]
@@ -385,6 +449,10 @@
 		'si': {
 			autonym: 'සිංහල',
 			inputmethods: [ 'si-singlish', 'si-wijesekara' ]
+		},
+		'sv': {
+			autonym: 'Svenska',
+			inputmethods: [ 'sv-normforms' ]
 		},
 		'ta': {
 			autonym: 'தமிழ்',

@@ -78,7 +78,9 @@
   ],
   "web_accessible_resources": [
     "images/ime-active.svg",
-    "images/tick.svg"
+    "images/tick.svg",
+    "images/ime-active.png",
+    "images/tick.png"
   ],
   "manifest_version": 2
 }
