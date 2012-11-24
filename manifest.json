@@ -9,7 +9,7 @@
   "description": "A chrome extension to automatically include jquery.ime library by Wikimedia Foundation for multilingual input",
   "content_scripts": [
     {
-      "matches": ["http://*/*", "https://*/*"],
+      "matches": ["http://*/*", "https://*/*", "file:///*/*"],
       "js": [
         "libs/jquery.js",
 
