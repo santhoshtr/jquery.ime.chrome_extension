@@ -1,10 +1,10 @@
 ( function ( $ ) {
 	'use strict';
 
-	var kokInScript2 = {
-		id: 'kok-inscript2',
-		name: 'कोंकणी इनस्क्रिप्ट २',
-		description: 'Enhanced InScript keyboard for Kokani language',
+	var mrInScript2 = {
+		id: 'mr-inscript2',
+		name: 'मराठी इनस्क्रिप्ट २',
+		description: 'Enhanced InScript keyboard for Marathi language',
 		date: '2012-11-06',
 		author: 'Parag Nemade',
 		license: 'GPLv3',
@@ -76,6 +76,8 @@
 			[";", "च"],
 			["\"", "ठ"],
 			["\\'", "ट"],
+			["\\~", "ऒ"],
+			["\\`", "ॊ"],
 			["X", "ँ"],
 			["x", "ं"],
 			["C", "ण"],
@@ -94,10 +96,11 @@
 			["\\%", "ज्ञ"],
 			["\\^", "त्र"],
 			["\\&", "क्ष"],
-			["\\*", "श्र"]],
+			["\\*", "श्र"]
+		],
 		patterns_x: [
-			["1", "‍"],
-			["2", "‌"],
+			["1", "\u200d"],
+			["2", "\u200c"],
 			["4", "₹"],
 			["\\+", "ॠ"],
 			["\\=", "ॄ"],
@@ -110,8 +113,9 @@
 			["X", "ॐ"],
 			[",", "॰"],
 			["\\>", "ऽ"],
-			["\\.", "॥"]]
+			["\\.", "॥"]
+		]
 	};
-	$.ime.register( kokInScript2 );
+	$.ime.register( mrInScript2 );
 
 }( jQuery ) );

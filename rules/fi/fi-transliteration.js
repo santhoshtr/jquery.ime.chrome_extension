@@ -21,7 +21,7 @@
 			[':O', 'Ö'],
 			['shh', 'š'],
 			['Shh', 'Š'],
-			['\\.e', '€'],
+			['\\.e', '€']
 		],
 		patterns_x: [
 			['e', '€']
@@ -29,4 +29,4 @@
 	};
 	$.ime.register( fiTransliteration );
 
-}( jQuery ) ); 
+}( jQuery ) );

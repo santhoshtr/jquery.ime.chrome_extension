@@ -10,6 +10,7 @@
 		this.inputmethod = null;
 		this.init();
 		this.listen();
+		this.timer = null;
 	}
 
 	IMESelector.prototype = {
@@ -27,7 +28,8 @@
 			// With correct event mapping we can probably reduce it to one menu.
 			this.$imeSetting = $( selectorTemplate );
 			this.$menu = $( '<div class="imeselector-menu" role="menu">' );
-			this.$menu.append( imeList() )
+			this.$menu.append( imeListTitle() )
+				.append( imeList() )
 				.append( toggleMenuItem() )
 				.append( languageListTitle() );
 			this.prepareLanguageList();
@@ -39,19 +41,51 @@
 			$( 'body' ).append( this.$imeSetting );
 		},
 
+		stopTimer: function () {
+			if ( this.timer ) {
+				clearTimeout( this.timer );
+				this.timer = null;
+			}
+
+			this.$imeSetting.stop( true, true );
+		},
+
+		resetTimer: function () {
+			var imeselector = this;
+
+			this.stopTimer();
+
+			this.timer = setTimeout(
+ 				function () {
+					imeselector.$imeSetting.animate( {
+						'opacity': 0,
+						'marginTop': '-20px'
+					}, 500, function () {
+						imeselector.$imeSetting.hide();
+						// Restore properties for next time it becomes visible:
+						imeselector.$imeSetting.css( 'opacity', 1 );
+						imeselector.$imeSetting.css( 'margin-top', 0 );
+					} );
+				}, 2500 );
+		},
+
 		focus: function () {
 			// Hide all other IME settings
 			$( 'div.imeselector' ).hide();
 			this.$imeSetting.show();
+			this.resetTimer();
 		},
 
 		show: function () {
 			this.$menu.addClass( 'open' );
+			this.stopTimer();
+			this.$imeSetting.show();
 			return false;
 		},
 
 		hide: function () {
 			this.$menu.removeClass( 'open' );
+			this.resetTimer();
 			return false;
 		},
 
@@ -66,6 +100,19 @@
 				if ( imeselector.$element.is( ':hidden' ) ) {
 					imeselector.$imeSetting.hide();
 				}
+			} );
+
+			imeselector.$element.on( 'blur.ime', function () {
+				if ( !imeselector.$imeSetting.hasClass( 'onfocus' ) ) {
+					imeselector.$imeSetting.hide();
+					imeselector.hide();
+				}
+			} );
+
+			imeselector.$imeSetting.mouseenter( function () {
+				imeselector.$imeSetting.addClass( 'onfocus' );
+			} ).mouseleave( function () {
+				imeselector.$imeSetting.removeClass( 'onfocus' );
 			} );
 
 			imeselector.$menu.on( 'click.ime', 'li', function() {
@@ -116,7 +163,7 @@
 		 */
 		keydown: function ( e ) {
 			var ime = $( e.target ).data( 'ime' );
-
+			this.focus(); // shows the trigger in case it is hidden
 			if ( isShortcutKey( e ) ) {
 				if ( ime.isActive() ) {
 					this.disableIM();
@@ -141,6 +188,7 @@
 		 * Position the im selector relative to the edit area
 		 */
 		position: function () {
+			this.focus();  // shows the trigger in case it is hidden
 			var position = this.$element.offset();
 
 			this.$imeSetting.css( 'top', position.top + this.$element.outerHeight() );
@@ -154,13 +202,20 @@
 		 * @param languageCode
 		 */
 		selectLanguage: function ( languageCode ) {
-			var language;
+			var language, ime;
 
+			ime = this.$element.data( 'ime' );
 			language = $.ime.languages[languageCode];
 
 			if ( !language ) {
 				return false;
 			}
+
+			if ( ime.getLanguage() === languageCode ) {
+				// nothing to do. It is same as the current language
+				return false;
+			}
+
 			this.$menu.find( 'li.ime-lang' ).show();
 			this.$menu.find( 'li[lang=' + languageCode + ']' ).hide();
 
@@ -168,7 +223,7 @@
 			this.prepareInputMethods( languageCode );
 			this.hide();
 			// And select the default inputmethod
-			this.$element.data( 'ime' ).setLanguage( languageCode );
+			ime.setLanguage( languageCode );
 			this.inputmethod = null;
 			this.selectIM( $.ime.preferences.getIM( languageCode ) );
 		},
@@ -342,8 +397,11 @@
 	}
 
 	function imeList () {
-		return $( '<h3>' ).addClass( 'ime-list-title' )
-			.append( $( '<ul>').addClass( 'ime-list' ) );
+		return  $( '<ul>' ).addClass( 'ime-list' );
+	}
+
+	function imeListTitle () {
+		return  $( '<h3>' ).addClass( 'ime-list-title' );
 	}
 
 	function toggleMenuItem () {

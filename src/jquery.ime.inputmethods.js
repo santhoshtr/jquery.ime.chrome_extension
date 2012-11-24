@@ -86,6 +86,10 @@
 			name: 'Normal forms',
 			source: 'rules/is/is-normforms.js'
 		},
+		'jv-transliteration': {
+			name: 'Transliteration',
+			source: 'rules/jv/jv-transliteration.js'
+		},
 		'mai-inscript': {
 			name: 'इनस्क्रिप्ट',
 			source: 'rules/mai/mai-inscript.js',
@@ -231,9 +235,9 @@
 			name: 'Phonetic',
 			source: 'rules/pa/pa-phonetic.js'
 		},
-		'ru-transliteration': {
-			name: 'Transliteration',
-			source: 'rules/ru/ru-transliteration.js'
+		'ru-jcuken': {
+			name: 'ЙЦУКЕН',
+			source: 'rules/ru/ru-jcuken.js'
 		},
 		'sa-inscript': {
 			name: 'Inscript',
@@ -354,6 +358,10 @@
 			autonym: 'Íslenska',
 			inputmethods: [ 'is-normforms' ]
 		},
+		'jv': {
+			autonym: 'ꦧꦱꦗꦮ',
+			inputmethods: [ 'jv-transliteration' ]
+		},
 		'ka': {
 			autonym: 'ქართული ენა',
 			inputmethods: [ 'ka-transliteration' ]
@@ -428,7 +436,7 @@
 		},
 		'ru': {
 			autonym: 'русский',
-			inputmethods: [ 'ru-transliteration' ]
+			inputmethods: [ 'ru-jcuken' ]
 		},
 		'sah': {
 			autonym: 'саха тыла',
