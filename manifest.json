@@ -92,10 +92,13 @@
     }
   ],
   "web_accessible_resources": [
-    "images/icon.png",
-    "images/ime-active.png",
-    "images/ime-inactive.png",
-    "images/tick.png"
+    "libs/jquery.ime/images/ime-active.png",
+    "libs/jquery.ime/images/ime-active.svg",
+    "libs/jquery.ime/images/ime-inactive.png",
+    "libs/jquery.ime/images/ime-inactive.svg",
+    "libs/jquery.ime/images/tick.png",
+    "libs/jquery.ime/images/tick.svg",
+    "images/icon.png"
   ],
   "manifest_version": 2
 }
