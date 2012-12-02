@@ -1,3 +1,6 @@
 [submodule "libs/qunit"]
 	path = libs/qunit
 	url = git://github.com/jquery/qunit.git
+[submodule "libs/jquery.ime"]
+	path = libs/jquery.ime
+	url = https://github.com/wikimedia/jquery.ime.git
