@@ -86,9 +86,14 @@
         "libs/jquery.ime/rules/te/te-transliteration.js",
         "libs/jquery.ime/rules/ur/ur-transliteration.js",
 
+        "libs/jquery.uls/jquery.uls.js",
+
         "src/content.js"
         ],
-      "css":["libs/jquery.ime/css/jquery.ime.css"]
+      "css":[
+        "libs/jquery.ime/css/jquery.ime.css",
+        "libs/jquery.uls/css/jquery.uls.css"
+        ]
     }
   ],
   "web_accessible_resources": [
@@ -98,6 +103,12 @@
     "libs/jquery.ime/images/ime-inactive.svg",
     "libs/jquery.ime/images/tick.png",
     "libs/jquery.ime/images/tick.svg",
+
+    "libs/jquery.uls/images/clear.png",
+    "libs/jquery.uls/images/close.png",
+    "libs/jquery.uls/images/search.png",
+    "libs/jquery.uls/images/world_map.png",
+
     "images/icon.png"
   ],
   "manifest_version": 2
